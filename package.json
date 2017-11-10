@@ -1,0 +1,24 @@
+{
+  "name": "teste-node",
+  "version": "1.0.0",
+  "description": "Aprendendo node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gigiosilva/teste-node.git"
+  },
+  "author": "Giovani Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gigiosilva/teste-node/issues"
+  },
+  "homepage": "https://github.com/gigiosilva/teste-node#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  }
+}
