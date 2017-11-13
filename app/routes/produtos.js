@@ -1,19 +1,27 @@
-module.exports = (app) => {
-    app.get('/produtos', (request, response) => {
-        var mysql = require('mysql');
-        var connection = mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: '',
-            database: testedb
-        });
+module.exports = app => {
 
-        connection.query('select * from livros', (err, results) => {
-            response.send(results);
+    app.get("/produtos", (req, res) => {
+
+        var connection = app.infra.connectionFactory();
+        var produtosBanco = new app.infra.produtosBanco(connection);
+        
+        produtosBanco.lista((err, results) => {
+            res.render('produtos/lista', {lista: results});
         });
 
         connection.end();
-        //consulta
-        response.render("produtos/lista")
+
+    });
+
+    app.get('produtos/remove', () => {
+
+        var connection = app.infra.connectionFactory();
+        var produtosBanco = app.infra.produtosBanco(connection);
+        var produto = produtosBanco.carrega(id, callback);
+
+        if(produto){
+            produtosBanco.remove(produto,callback);
+        }
+
     });
 }
