@@ -10,7 +10,6 @@ var server = http.listen(porta, function () {
     var host = server.address().address;
     var port = server.address().port;
 
-    console.log('Example app listening at http://%s:%s', host, port);
-    console.log('http://localhost:3000');
+    console.log('App listening at http://%s:%s', host, port);
 
 });

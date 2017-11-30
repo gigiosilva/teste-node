@@ -4,7 +4,8 @@
   "description": "Aprendendo node",
   "main": "index.js",
   "scripts": {
-    "test": "set NODE_ENV=test&& mocha --reporter spec"
+    "test": "set NODE_ENV=test&& mocha --reporter spec",
+    "start": "node app"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,8 @@
   "devDependencies": {
     "mocha": "^4.0.1",
     "supertest": "^3.0.0"
+  },
+  "engine": {
+    "node": "8.9.1"
   }
 }
